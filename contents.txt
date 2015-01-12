@@ -1,0 +1,47 @@
+TITLE
+
+Abstract
+
+Referat
+
+Statement of Collaboration
+
+1. Introduction
+	1.1. Problem Statement
+	1.2. Limitations
+	1.4. Terminology
+
+2. Background
+	2.1. Electrodermal Activity
+	2.2. The Tetris Game
+	2.3. The Q-Sensor
+	2.4. Similar Studies
+		2.4.1. Tetris Implementation Using EDA for Optimal Mindset
+		2.4.2. First Person Shooter (FPS) with EDA Biofeedback Features
+
+3. Analysis
+	3.1. Study Visit at SICS
+	3.2. Implementation
+		3.2.1. Approach
+		3.2.2. Problems
+		3.2.3. Result
+	3.3. User Experiment
+		3.3.1. Method
+		3.3.2. Experimental Setup
+		3.3.3. Survey
+
+4. Experimental Result
+
+5. Discussion	
+	5.1. Possible Usage of EDA in Different Games
+	5.2. Difficulties
+	5.3. Expected Results
+	5.4. Suggestions of Future Studies
+
+6. Conclusions
+
+Bibliography
+
+Appendices
+	A Java Source Code
+	B Survey

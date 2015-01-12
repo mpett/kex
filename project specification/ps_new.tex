@@ -1,0 +1,125 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%    PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+\usepackage{hyperref}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%    TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{    
+\normalfont \normalsize 
+\textsc{KTH Royal Institute of Technology} \\ [25pt] % Your university, school and/or department name(s)
+\textsc{CSC School of Computer Science and Communication} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Bachelor's Thesis: Project Specification\\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Martin Pettersson (martinp4@kth.se)\\Daniel Swensson (dsw@kth.se)} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%    PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\section{Problem Title}
+
+\begin{center}
+Controlling Cognition Flow in Biofeedback Computer Gaming Using EDA (Electrodermal Activity)
+  \end{center}
+
+%------------------------------------------------
+
+\section{Introduction}
+Electrodermal Activity, abbreviated EDA, is a form of technology developed to measure sweat levels in human skin. "For most people, if one experiences emotional arousal, increased cognitive workload or physical exertion, the brain sends signals to the skin in order to increase the level of sweating." [1]
+\\ \\
+This technology is interesting to use for measurement of cognitive activity during specific objectives or tasks, such as analyzing the difference between an experienced car driver and a subject who uses a car for the first time with no prior experience. [2]
+\\ \\
+Some research combining EDA and commercial computer game titles have been made. Most game implementations in these studies have focused on FPS, \textit{First Person Shooter} titles [3]. At this state, studies made on enhanced computer game mechanics using EDA biofeedback seems to be relatively unexplored.
+
+%------------------------------------------------
+\section{Problem Statement}
+
+In this project we whish to explore the possibility of test subjects deliberately controlling their cognitive flow and arousal while playing a simple but still somewhat stressful computer game such as \textit{Tetris} [4]. A similar study was done in 2010 [5], focusing on finding an optimal state of mind while playing the game mentioned. Here it was stated that while a computer game generally is intended to affect the player in a positive way (e.g. positive excitement), it may however impact the subject in a more diverse manner, largely depending on the difficulty of the game. It was suggested that players became more negatively affected if the difficulty was too hard or too easy, emotions ranging from boredom to frustration. The idea was to calm the player when feeling stressed and induce excitement during states of boredom, thus forcing the game to adapt its difficulty to the subject and making the experience more positive and exciting. The article proposes demonstration techniques but mentions no concrete results of these experiments.
+\\ \\
+We want to explore these ideas further with a slightly different approach, focusing on stressful situations. The \textit{Tetris} implementation in the report from 2010 made the game easier when a test subject became emotionally aroused or stressed and increased the difficulty during calmness. We plan on implementing a similar version of the game, but with opposite biofeedback functionality; the game speed will increase when a player becomes stressed. The reason for this is to determine if the player can control his or her cognitive flow and stress levels deliberately. The problem will be tested by issuing a quantitative study, letting several test subjects play our implementation of the game while trying to make the game go faster and slower on demand.
+\\ \\
+Depending on our results, we may also make reflections on how this type of biofeedback feature would be a rewarding element in a commercial game title.
+%------------------------------------------------
+
+%------------------------------------------------
+\section{Approach}
+In order to explore the problem stated, an implementiation of \textit{Tetris} using live biofeedback signals needs to be developed. The actual game will most likely be a modified open source version. The specific biofeedback signal will be EDA solely, and a slightly modified \textit{Q-Sensor} from \textit{Affectiva} [6] will be used in order to measure this. We have realised that EDA measurements using current software with the provided Q-Sensor seem to be somewhat unprecise. The cause of this may be inadequate calibration methods or unsufficient sensitivity of the sensor. It has also come to our knowledge that different subjects respond very differently in stressful situations; variations in cognition flow or sweat levels may require different forms of calibration. 
+\\ \\
+At this moment we only have a vague understanding of the hardware specifics and its limitations; this is something we need to work on. Starting off, we will have to evaluate if it is possible to use existing software provided with the Q-Sensor. If this is not the case, the Bluetooth protocol needs to be read and processed by ourselves. Since we are not motivated to spend the bulk of this project on hardware issues, one possibility may be to solve these problems in collaboration with the two other assigned project groups.
+\\ \\
+Starting off, the first implementation of the game will only change the speed depending on biofeedback signals. This implementation will be tested before the actual study is issued. If measurement data from this version proves to be insufficient or unsecure (for instance, the subject never gets stressed out), we may introduce "elements of surprise" during calmness in order to force the player to become more aroused. Examples of such surprise elements may be that game controls suddenly becomes reversed, \textit{Tetrimino} blocks switches to another block in mid-air, or introducing time limit elements (such as to fill a row in a short period of time).
+\\ \\
+Depending on time constraints, we may also explore other game implementations with varying genres and features in order to receive broader results.
+
+%------------------------------------------------
+\section{References}
+1, 6: \href{http://www.affectiva.com/q-sensor/resources/understanding-eda/how-is-it-measured/}{Resources: Understanding EDA}
+\\ \\
+2: \href{http://essay.utwente.nl/61873/1/Schnittker%2C_R._-_s1016350_%28verslag%29.pdf}{Electrodermal Activity of Novice Drivers During Driving Simulator Training - An Explorative Study}
+\\ \\
+3: \href{http://dl.acm.org/citation.cfm?id=1753453}{The Influence of Implicit and Explicit Biofeedback in First-Person Shooter Games}
+\\ \\
+4: Tetris is  a tile-matching puzzle video game originally designed and programmed by Alexey Pajitnov in the Soviet Union, originally published 1984. (http://en.wikipedia.org/wiki/Tetris)
+\\ \\
+5: \href{http://delivery.acm.org/10.1145/2390000/2388738/p297-guillaume.pdf?ip=130.237.226.49&acc=ACTIVE%20SERVICE&CFID=181007248&CFTOKEN=42904175&__acm__=1361128801_dc52e4e7b2b02da7d61b8652f9e5c8f9}{GamEMO: How Physiological Signals Show your Emotions and Enhance your Game Experience}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
